@@ -1,4 +1,4 @@
-var apiUrl = 'http://conf.pac.by/menu/api/getMenu.php?k=2';
+var apiUrl = 'http://conf.pac.by/menu/api/getMenu.php?k=1';
 
 var app = new Vue({
     el: '#app',
