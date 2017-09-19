@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span v-if="loading">Loading menu... :)</span>
+        <div id="menu" v-if="menu">
+            {{ menu.date }}
+            <ul>
+                <li v-for="category in menu.cat">
+                    <b>{{category.cname}}</b>
+                    <ul>
+                        <li v-for="item in category.item">
+                            <span v-html="item.iname"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
