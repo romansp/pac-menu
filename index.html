@@ -2,29 +2,38 @@
 <html>
 
 <head>
-    <title>Menu</title>
-    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <title>Menu</title>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 </head>
 
 <body>
-    <div id="app">
-        <span v-if="loading">Loading menu... :) Note: Unblock non-HTTPs content if it takes too much time.</span>
-        <div id="menu" v-if="menu">
-            {{ menu.date }}
-            <ul>
-                <li v-for="category in menu.cat">
-                    <b>{{category.cname}}</b>
-                    <ul>
-                        <li v-for="item in category.item">
-                            <span v-html="item.iname"></span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
+  <div id="app">
+    <span v-if="loading">Loading menu... :)</span>
+    <div id="menu" v-if="menu">
+      <span><b>{{ menu.date }}</b></span>
+      <ul>
+        <li v-for="category in menu.cat">
+          <table>
+            <thead>
+              <tr>
+                <th>{{category.cname}}</th>
+                <th>Цена, р.</th>
+                <th>Вес, г.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in category.item">
+                <td v-html="item.iname"></td>
+                <td v-html="item.iprice"></td>
+                <td v-html="item.iport"></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
     </div>
-    <script src="app.js"></script>
+  </div>
+  <script src="app.js"></script>
 
 </body>
 
