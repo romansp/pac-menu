@@ -13,9 +13,9 @@ var app = new Vue({
         fetchData: function () {
             this.loading = true;
             fetch(apiUrl)
-                .then(res => res.text())
-                .then(text => {
-                    this.menu = JSON.parse(text);
+                .then(res => res.json())
+                .then(menu => {
+                    this.menu = menu;
                     this.loading = false;
                 })
                 .catch(err => console.error(err));
